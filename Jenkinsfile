@@ -7,19 +7,19 @@ pipeline{
             }
         }
         stage("Build for linux"){
-            agent linux-agent
+            agent { label "linux-agent" }
             steps{
               echo "This build is for Linux Builds"
             }
         }
         stage("Build for windows"){
-            agent windows-agent
+            agent { label "windows-agent" }
             steps{
               echo "This build is for Windows Builds"
             }
         }
         stage("Build for macos"){
-            agent macos-agent
+            agent { label "macos-agent" }
             steps{
                echo "This build is for Macos Builds"
             }
